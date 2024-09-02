@@ -1,0 +1,40 @@
+{
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "name": "StreamPETR: train debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["projects/configs/StreamPETR/stream_petr_vov_flash_800_bs8_seq_24e_mod.py",
+            "--work-dir", "work_dirs/stream_petr_vov_flash_800_bs8_seq_24e_mod"],
+            "env": {"PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"},
+            "justMyCode": false
+        },
+        {
+            "name": "StreamPETR: test debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["projects/configs/StreamPETR/stream_petr_vov_flash_800_bs8_seq_24e_mod.py",
+            "work_dirs/stream_petr_vov_flash_800_bs2_seq_24e/latest.pth", "--format-only"],
+            "env": {"PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"},
+            "justMyCode": false
+        },
+        {
+            "name": "StreamPETR: test my debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {"PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"},
+            "justMyCode": false
+        }
+    ]
+}
